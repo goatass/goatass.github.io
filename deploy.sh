@@ -13,7 +13,10 @@ git add -A .
 git commit -m "`date`"
 git stash
 git push --force origin dist
-git push origin `git subtree split --prefix dist dist`:sub --force
+git branch -D sub
+git subtree push --prefix dist origin sub
+git checkout sub
+git push --force origin sub
 git checkout master
 git rebase sub
 git push --force origin master
