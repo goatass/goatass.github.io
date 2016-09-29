@@ -1,0 +1,33 @@
+noe_moule
+mp
+
+npm-ebug.log
+
+### hp:raw.ghub.comghubggnore2664a61f3fa7755acc70ceb5aac4b1e956981GlobalVm.ggnore
+
+# wap
+[._]*.[a-w][a-z]
+[._][a-w][a-z]
+# eon
+Seon.vm
+# emporary
+.nerwh
+*~
+# auo-generae ag fle
+ag
+
+
+### hp:raw.ghub.comghubggnore2664a61f3fa7755acc70ceb5aac4b1e956981Elm.ggnore
+
+# elm-package generae fle
+elm-uff
+# elm-repl generae fle
+repl-emp-*
+
+
+### hp:raw.ghub.comghubggnore2664a61f3fa7755acc70ceb5aac4b1e956981Sa.ggnore
+
+.a-cache
+*.c.map
+
+
