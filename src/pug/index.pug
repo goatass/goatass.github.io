@@ -4,19 +4,51 @@ html(lang="ja")
     meta(content="IE=edge" http-equiv="X-UA-Compatible")
     meta(content="text/html; charset=UTF-8" http-equiv="Content-Type")
     meta(content="width=device-width,initial-scale=1" name="viewport")
+    //- TODO more descriptions
+    meta(name="description" content="簡単3ステップ！Chat AIによる全自動顧客獲得のGoat@ss(ゴータス)")
+    //- TODO social meta
     title
       | 簡単3ステップ！Chat AIによる全自動顧客獲得のGoat@ss(ゴータス)
   body
-    h1.title
-      | 簡単3ステップ！Chat AIによる全自動顧客獲得のGoat@ss(ゴータス)
-    .header
-      .goatassImg#js-goatassImg
-        .goatassImg-dummyImg
-      form.header-form
-        .labeledRow
-          .labeledRow-label
-            input.form-input(type="email" required)
-          .labeledRow-body
-            input.form-input(type="submit" value="詳細情報を受け取る")
-    .content
-      | 2016年 冬 公開
+    header.header
+      .header_logo(title="goat@ss")
+      .header_social
+        .header_social-hatena
+        .header_social-twitter
+        .header_social-facebookLike
+        .header_social-facebookShare
+    section.top
+      .top_background
+      .top_goatass
+        .top_goatass-background
+        .top_goatass-img#js-goatassImg
+          .goatassImg-dummyImg
+      .top_textArea
+        h1.title
+          .subTitle
+            | 簡単3ステップ！
+          .middleTitle
+            | Chat AIが顧客を全自動で獲得
+          .mainTitle
+            | Goat@ss
+        //- .deadline
+        //-   | 今冬 公開
+        form.header-form
+          .labeledRow
+            .labeledRow-label.externalLabel
+              input.form-input(type="email" required)
+              .inlineLabel
+                | メールアドレス
+            .labeledRow-body
+              input.form-button(type="submit" value="詳細情報を受け取る")
+    main.main
+      .main_block
+        h2
+          | まるで専属のカスタマーサポートがいるよう
+        .description
+          | めっちゃいいよ！
+      .main_block
+        h2
+          | 3ステップで、あとは待つだけ
+        .description
+          | めっちゃいいよ！
