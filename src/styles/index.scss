@@ -1,0 +1,62 @@
+@import "./_reset";
+
+$main-color: #a2f89c;
+
+body {
+  font-size: 14px;
+  line-height: 120%;
+}
+
+@media (min-width: 320px) {
+  body {
+    font-size: calc(0.9375vw + 11px);
+    line-height: calc(120% + 1vw - 3.2px);
+  }
+}
+
+@media (min-width: 960px) {
+  body {
+    font-size: 20px;
+    line-height: calc(120% + 1vw + 6.4px);
+  }
+}
+
+.title {
+  font-size: 1.6em;
+  line-height: 1em;
+  padding: 0.4em;
+}
+
+.header {
+  padding: 1em;
+  background-color: $main-color;
+
+  .header-form {
+    display: inline-block;
+  }
+}
+
+.goatassImg {
+  display: inline-block;
+  margin: 0;
+  width: 50%;
+  background-color: $main-color;
+
+  svg {
+    background-color: $main-color;
+  }
+}
+
+.goatassImg-dummyImg {
+  background-image: url("../img/goatass.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-bottom: calc(100% * 300 / 233);
+}
+
+.content {
+  padding: 1em;
+  font-size: 1.6em;
+  text-align: center;
+}

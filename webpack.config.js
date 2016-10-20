@@ -10,6 +10,7 @@ console.log('Start Webpack process...');
 
 // Determine build env by npm command options
 const TARGET_ENV = process.env.npm_lifecycle_event === 'build' ? 'production' : 'development';
+const ENV = {};
 
 // Common webpack config
 const commonConfig = {
@@ -18,6 +19,15 @@ const commonConfig = {
   output: {
     path: path.resolve(__dirname, 'dist/'),
     filename: '[name]-[hash].js',
+  },
+
+  entry: {
+    index: [
+      path.join( __dirname, 'src/index.js' )
+    ],
+    ga: [
+      path.join( __dirname, 'src/js/ga.js' )
+    ],
   },
 
   resolve: {
@@ -45,7 +55,7 @@ const commonConfig = {
   plugins: [
     // Compile static pages
     new HtmlWebpackPlugin({
-      chunks: ['index'],
+      chunks: ['index', 'ga'],
       template: 'src/pug/index.pug',
       inject:   'body',
       filename: 'index.html',
@@ -53,7 +63,7 @@ const commonConfig = {
 
     // Inject variables to JS file.
     new webpack.DefinePlugin({
-      'process.env': process.env,
+      'process.env': ENV
     }),
   ],
 
@@ -69,15 +79,18 @@ const commonConfig = {
 // Additional webpack settings for local env (when invoked by 'npm start')
 if (TARGET_ENV === 'development') {
   console.log('Serving locally...');
+  const mapObjVals = (f, obj) =>
+    Object.keys(obj).reduce((a, key) => {
+      a[key] = f(obj[key]);
+      return a;
+    }, {});
 
   module.exports = merge(commonConfig, {
 
-    entry: {
-      index: [
-        'webpack-dev-server/client?http://localhost:8080',
-        path.join( __dirname, 'src/index.js' )
-      ],
-    },
+    entry: mapObjVals((v) =>
+      ['webpack-dev-server/client?http://localhost:8080'],
+      commonConfig.entry
+    ),
 
     devServer: {
       contentBase: 'src',
@@ -107,12 +120,6 @@ if (TARGET_ENV === 'production') {
   console.log('Building for prod...');
 
   module.exports = merge(commonConfig, {
-
-    entry: {
-      index: [
-        path.join( __dirname, 'src/index.js' )
-      ],
-    },
 
     module: {
       loaders: [
