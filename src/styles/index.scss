@@ -37,6 +37,7 @@ body {
 .header {
   height: $header-size;
   padding: 1em;
+  text-align: right;
 
   .header_logo {
     display: inline-block;
