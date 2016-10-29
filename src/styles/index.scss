@@ -2,7 +2,7 @@
 
 $main-color: #a2f89c;
 $main-color-light: #d7ffd4;
-$font-color: #333;
+$font-color: #555;
 $font-color-light: #ccc;
 $font-color-sub: #555e8d;
 $default-color: #fff;
@@ -10,6 +10,11 @@ $sideBar-width: 20em;
 $sideBar-margin: 15em;
 $header-size: 4em;
 $main-width: 70vw;
+
+@mixin shaded-area {
+  background: linear-gradient(-45deg, $main-color 25%, white 25%, white 50%, $main-color 50%, $main-color 75%, white 75%, white);
+  background-size: 4px 4px;
+}
 
 body {
   font-size: 14px;
@@ -49,8 +54,8 @@ body {
   height: calc(100vh - #{$header-size});
 
   .top_background {
-    background: linear-gradient(-45deg, $main-color 25%, white 25%, white 50%, $main-color 50%, $main-color 75%, white 75%, white);
-    background-size: 4px 4px;
+    @include shaded-area;
+
     position: absolute;
     top: 72vh;
     left: 0;
@@ -199,11 +204,60 @@ body {
 }
 
 .main {
-  padding: 1em;
-  font-size: 1.6em;
   text-align: center;
-  margin-top: 2em;
-  margin-left: 4em;
-  background-color: $default-color;
+
+  .main_block {
+    position: relative;
+    background-color: $default-color;
+    padding: 2em 0 1em 3em;
+    max-width: 70em;
+    min-height: 12em;
+
+    &:nth-child(2n-1) {
+      margin: 2em 0 1em 10vw;
+      margin-left: auto;
+
+      .main_block-background {
+        right: 0;
+      }
+    }
+
+    &:nth-child(2n) {
+      margin: 2em 10vw 1em 0;
+      margin-right: auto;
+
+      .main_block-background {
+        left: 0;
+      }
+    }
+
+    &:last-child .main_block-background {
+      height: calc(100% - 8em);
+      top: 9em;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      color: $font-color;
+    }
+
+    .description {
+      color: $font-color-sub;
+      padding: 1.6em 0.8em;
+      font-size: 0.9em;
+      max-width: 40em;
+      line-height: 1.2;
+    }
+
+    .main_block-background {
+      @include shaded-area;
+
+      position: absolute;
+      z-index: -1;
+      width: 100vw;
+      height: 100%;
+      top: 9em;
+    }
+  }
 }
 
