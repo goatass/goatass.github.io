@@ -31,6 +31,9 @@ const commonConfig = {
     inlineLabel: [
       path.join( __dirname, 'src/js/inline-label.js' )
     ],
+    submit: [
+      path.join( __dirname, 'src/js/submit.js' )
+    ],
   },
 
   resolve: {
@@ -58,7 +61,7 @@ const commonConfig = {
   plugins: [
     // Compile static pages
     new HtmlWebpackPlugin({
-      chunks: ['index', 'ga', 'inlineLabel'],
+      chunks: ['index', 'ga', 'inlineLabel', 'submit'],
       template: 'src/pug/index.pug',
       inject:   'body',
       filename: 'index.html',

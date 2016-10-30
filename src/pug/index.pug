@@ -44,14 +44,14 @@ html(lang="ja")
             | Chat AIが顧客を全自動で獲得
           .mainTitle
             | Goat@ss
-        form.header-form
+        form#js-form.header-form
           .labeledRow
             #js-inlineLabel.labeledRow-label
-              input#js-inlineLabel-input.form-input(type="email" required)
+              input#js-inlineLabel-input.form-input(name="email" type="email" required)
               .inlineLabel
                 | メールアドレス
             .labeledRow-body
-              input.form-button(type="submit" value="詳細情報を受け取る")
+              input#js-submit.form-button(type="submit" value="詳細情報を受け取る")
       .top_background
     main.main
       .main_block
