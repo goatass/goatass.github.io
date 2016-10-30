@@ -203,7 +203,10 @@ body {
             position: absolute;
             top: 0;
             left: 0;
-            padding: 6px;
+            padding: 0 6px;
+            color: $font-color-light;
+            display: inline-block;
+            line-height: 2em;
           }
 
           &.externalLabel {
@@ -213,6 +216,7 @@ body {
 
             .inlineLabel {
               font-size: 0.9em;
+              color: $font-color-sub;
             }
           }
         }
@@ -226,6 +230,7 @@ body {
             padding: 0 1em;
             max-width: 12em;
             width: 100%;
+            cursor: pointer;
           }
         }
       }

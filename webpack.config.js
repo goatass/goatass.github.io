@@ -28,6 +28,9 @@ const commonConfig = {
     ga: [
       path.join( __dirname, 'src/js/ga.js' )
     ],
+    inlineLabel: [
+      path.join( __dirname, 'src/js/inline-label.js' )
+    ],
   },
 
   resolve: {
@@ -55,7 +58,7 @@ const commonConfig = {
   plugins: [
     // Compile static pages
     new HtmlWebpackPlugin({
-      chunks: ['index', 'ga'],
+      chunks: ['index', 'ga', 'inlineLabel'],
       template: 'src/pug/index.pug',
       inject:   'body',
       filename: 'index.html',
