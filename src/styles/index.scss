@@ -10,7 +10,7 @@ $sideBar-width: 20em;
 $sideBar-margin: 15em;
 $header-size: 4em;
 $main-width: 70vw;
-$sp-size: 320px;
+$sp-size: 600px;
 $tablet-size: 960px;
 
 @mixin shaded-area {
@@ -26,7 +26,7 @@ body {
 
 @media (min-width: $sp-size) {
   body {
-    font-size: calc(0.9375vw + 11px);
+    font-size: calc(0.5vw + 11px);
   }
 }
 
@@ -96,12 +96,18 @@ body {
       top: 0;
       right: 0;
       display: inline-block;
-      width: 80%;
-      padding: 4em 6em 4em 4em;
+      padding: 2em;
       height: 100%;
       overflow-y: hidden;
-      min-width: 80vh;
       max-width: 110vh;
+      width: 100%;
+      min-width: 100%;
+
+      @media (min-width: $sp-size) {
+        width: 80%;
+        min-width: 80vh;
+        padding: 4em 6em 4em 4em;
+      }
 
       svg {
         margin-left: auto;
@@ -120,6 +126,7 @@ body {
     width: 100%;
 
     @media (min-width: $tablet-size) {
+      text-align: left;
       margin-left: -4em;
       min-width: 14em;
       padding: 0;
@@ -201,7 +208,7 @@ body {
 
           &.externalLabel {
             .form-input {
-              margin-top: 1.2em;
+              margin-top: 1.4em;
             }
 
             .inlineLabel {
@@ -244,12 +251,14 @@ body {
   .main_block {
     position: relative;
     background-color: $default-color;
-    padding: 2em 0 1em 3em;
+    padding: 2em 2em 1em;
     max-width: 70em;
     min-height: 12em;
     margin: 0 0 2em;
 
     @media (min-width: $tablet-size) {
+      padding: 2em 0 1em 3em;
+
       &:nth-child(2n-1) {
         margin: 2em 0 1em 10vw;
         margin-left: auto;
